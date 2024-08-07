@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/Final.gltf')
+  const { nodes, materials } = useGLTF('./model/Final.gltf')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube.geometry} material={materials['Material.001']} scale={1} />
@@ -15,4 +15,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/Final.gltf')
+useGLTF.preload('./model/Final.gltf')
