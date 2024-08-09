@@ -1,6 +1,6 @@
 import { useFrame } from '@react-three/fiber';
 import React, { useRef } from 'react'
-import Final from '../../public/Final'
+import Bottle from '../components/model/Bottle'
 
 const RotatingModel = () => {
     
@@ -14,7 +14,7 @@ const RotatingModel = () => {
 
   return (
     <mesh ref={modelRef}>
-        <Final/>
+        <Bottle/>
     </mesh>
   );
 }
