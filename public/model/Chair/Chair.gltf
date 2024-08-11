@@ -4,10 +4,10 @@
 		"version":"2.0"
 	},
 	"extensionsUsed":[
-		"KHR_materials_specular",
-		"KHR_materials_ior",
-		"KHR_materials_clearcoat",
-		"KHR_materials_sheen"
+		"KHR_texture_transform"
+	],
+	"extensionsRequired":[
+		"KHR_texture_transform"
 	],
 	"scene":0,
 	"scenes":[
@@ -21,87 +21,98 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"bottom",
+			"name":"Cube.003",
 			"rotation":[
-				-0.10851829499006271,
-				0.0029490909073501825,
-				0.000321932922815904,
-				0.9940900206565857
+				0,
+				0.7071067094802856,
+				0,
+				0.7071068286895752
+			],
+			"scale":[
+				0.29401707649230957,
+				0.2940170466899872,
+				0.2940170466899872
 			],
 			"translation":[
-				-0.012318006716668606,
-				0.32985585927963257,
-				-0.08331127464771271
+				0,
+				0.25479191541671753,
+				0
 			]
 		}
 	],
 	"materials":[
 		{
 			"doubleSided":true,
-			"extensions":{
-				"KHR_materials_specular":{
-					"specularFactor":0
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
-			},
-			"name":"scheep0",
+			"name":"leather",
 			"normalTexture":{
-				"index":0,
-				"scale":0.8999999761581421
+				"index":0
 			},
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.800000011920929,
-					0.800000011920929,
-					0.800000011920929,
-					1
-				],
-				"metallicFactor":0
+				"baseColorTexture":{
+					"index":1
+				},
+				"metallicFactor":0,
+				"metallicRoughnessTexture":{
+					"index":2
+				}
 			}
 		},
 		{
 			"doubleSided":true,
-			"extensions":{
-				"KHR_materials_clearcoat":{
-					"clearcoatFactor":0.25,
-					"clearcoatRoughnessFactor":0.5419847369194031
-				},
-				"KHR_materials_specular":{
-					"specularFactor":0.25954198837280273
-				},
-				"KHR_materials_sheen":{
-					"sheenColorFactor":[
-						1.0,
-						1.0,
-						1.0
-					],
-					"sheenRoughnessFactor":0.5
-				},
-				"KHR_materials_ior":{
-					"ior":0
-				}
-			},
-			"name":"oak-mod",
+			"name":"wood.001",
 			"normalTexture":{
-				"index":1,
-				"scale":0.5999999642372131
+				"extensions":{
+					"KHR_texture_transform":{
+						"offset":[
+							0,
+							-6
+						],
+						"scale":[
+							7,
+							7
+						]
+					}
+				},
+				"index":3
 			},
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
-					"index":2
+					"extensions":{
+						"KHR_texture_transform":{
+							"offset":[
+								0,
+								-6
+							],
+							"scale":[
+								7,
+								7
+							]
+						}
+					},
+					"index":4
 				},
 				"metallicFactor":0,
 				"metallicRoughnessTexture":{
-					"index":3
+					"extensions":{
+						"KHR_texture_transform":{
+							"offset":[
+								0,
+								-6
+							],
+							"scale":[
+								7,
+								7
+							]
+						}
+					},
+					"index":5
 				}
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube.015",
+			"name":"Cube.006",
 			"primitives":[
 				{
 					"attributes":{
@@ -140,147 +151,165 @@
 		{
 			"sampler":0,
 			"source":3
+		},
+		{
+			"sampler":0,
+			"source":4
+		},
+		{
+			"sampler":0,
+			"source":5
 		}
 	],
 	"images":[
 		{
-			"mimeType":"image/png",
-			"name":"normal",
-			"uri":"Textures/normal.png"
+			"mimeType":"image/jpeg",
+			"name":"FabricLeatherBuffaloRustic001_NRM_2K",
+			"uri":"Textures/FabricLeatherBuffaloRustic001_NRM_2K.jpg"
 		},
 		{
 			"mimeType":"image/jpeg",
-			"name":"Wood Material 15_Normal",
-			"uri":"Textures/Wood%20Material%2015_Normal.jpg"
+			"name":"FabricLeatherBuffaloRustic001_COL_VAR3_2K",
+			"uri":"Textures/FabricLeatherBuffaloRustic001_COL_VAR3_2K.jpg"
 		},
 		{
 			"mimeType":"image/png",
-			"name":"Oak Wood 2_BaseColor",
-			"uri":"Textures/Oak%20Wood%202_BaseColor.png"
+			"name":"FabricLeatherBuffaloRustic001_GLOSS_2K",
+			"uri":"Textures/FabricLeatherBuffaloRustic001_GLOSS_2K.png"
+		},
+		{
+			"mimeType":"image/jpeg",
+			"name":"Wood005_2K_NormalGL",
+			"uri":"Textures/Wood005_2K_NormalGL.jpg"
+		},
+		{
+			"mimeType":"image/jpeg",
+			"name":"Wood005_2K_Color",
+			"uri":"Textures/Wood005_2K_Color.jpg"
 		},
 		{
 			"mimeType":"image/png",
-			"name":"Oak Wood 2_BaseColor",
-			"uri":"Textures/Oak%20Wood%202_BaseColor-1.png"
+			"name":"Wood005_2K_Roughness",
+			"uri":"Textures/Wood005_2K_Roughness.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":14036,
+			"count":24908,
 			"max":[
-				0.26262134313583374,
-				0.4228528141975403,
-				0.35458874702453613
+				0.6874152421951294,
+				0.832848072052002,
+				0.9998313188552856
 			],
 			"min":[
-				-0.2659645676612854,
-				-0.15554964542388916,
-				-0.3546297550201416
+				-0.6773144006729126,
+				-0.43723592162132263,
+				-0.8607072830200195
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":14036,
+			"count":24908,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":14036,
+			"count":24908,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":81024,
+			"count":118296,
 			"type":"SCALAR"
 		},
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":5979,
+			"count":1279,
 			"max":[
-				0.300640344619751,
-				0.21178071200847626,
-				0.3546297550201416
+				0.7463701367378235,
+				0.6879249811172485,
+				0.9442362785339355
 			],
 			"min":[
-				-0.300640344619751,
-				-0.4228528141975403,
-				-0.3443414568901062
+				-0.7366871237754822,
+				-0.866588830947876,
+				-0.8347122669219971
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":5979,
+			"count":1279,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":5979,
+			"count":1279,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":7,
 			"componentType":5123,
-			"count":28800,
+			"count":4860,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":168432,
+			"byteLength":298896,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":168432,
-			"byteOffset":168432,
+			"byteLength":298896,
+			"byteOffset":298896,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":112288,
-			"byteOffset":336864,
+			"byteLength":199264,
+			"byteOffset":597792,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":162048,
-			"byteOffset":449152,
+			"byteLength":236592,
+			"byteOffset":797056,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":71748,
-			"byteOffset":611200,
+			"byteLength":15348,
+			"byteOffset":1033648,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":71748,
-			"byteOffset":682948,
+			"byteLength":15348,
+			"byteOffset":1048996,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":47832,
-			"byteOffset":754696,
+			"byteLength":10232,
+			"byteOffset":1064344,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":57600,
-			"byteOffset":802528,
+			"byteLength":9720,
+			"byteOffset":1074576,
 			"target":34963
 		}
 	],
@@ -292,7 +321,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":860128,
+			"byteLength":1084296,
 			"uri":"Chair.bin"
 		}
 	]
