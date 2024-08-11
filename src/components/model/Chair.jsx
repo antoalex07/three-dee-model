@@ -4,21 +4,24 @@ Command: npx gltfjsx@6.5.0 Chair.gltf
 */
 
 import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import { Plane, useGLTF } from '@react-three/drei'
+import { MeshStandardMaterial } from 'three';
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('./model/Chair/Chair.gltf')
+
+  const angleInRadians = (angelInDeg) => {
+    return (Math.PI / 180) * angelInDeg;
+  }
+
+  const { nodes, materials } = useGLTF('./model/Chair/Chair.gltf')  
   return (
     <group {...props} dispose={null}>
-
-      <group position={[-0.012, 0.33, -0.083]} rotation={[-0.217, 0.006, 0.001]} scale={[5, 5, 5]}>
-        <mesh geometry={nodes.Cube015.geometry} material={materials.scheep0} />
-        <mesh geometry={nodes.Cube015_1.geometry} material={materials['oak-mod']} />
+      <group castShadow receiveShadow position={[0, 0.5, 0]} rotation={[0, 1.571, 0]} scale={1.294}>
+        <mesh geometry={nodes.Cube006.geometry} material={materials.leather} />
+        <mesh geometry={nodes.Cube006_1.geometry} material={materials['wood.001']} />
       </group>
     </group>
   )
 }
 
 useGLTF.preload('./model/Chair/Chair.gltf')
-
-// -0.012, 0.33, -0.083
