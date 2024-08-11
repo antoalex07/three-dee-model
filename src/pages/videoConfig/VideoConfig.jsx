@@ -5,9 +5,12 @@ import './VideoConfig.css'
 const VideoConfig = () => {
   return (
     <div className='videoConfig'>
-        <div>
-            <VideoPlayer/>
-        </div>
+      <div className='heading'>
+        <h1>Seamless Video Loop of 3D Object</h1>
+      </div>
+      <div className='model__container'>
+        <VideoPlayer/>
+      </div>
     </div>
   )
 }
