@@ -1,7 +1,7 @@
 import { ContactShadows, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React, { Suspense } from 'react'
-import Chair from '../../components/model/Chair'
+import Chair from '../../components/model/Chair3'
 import './AnalyzeConfig.css'
 import { DepthOfField, EffectComposer } from '@react-three/postprocessing'
 
@@ -14,7 +14,7 @@ const AnalyzeConfig = () => {
       </div>
       <div className='model__container'>
         <Canvas>
-          <PerspectiveCamera makeDefault position={[4.35, 3.31, -3.61]} fov={60} />
+          <PerspectiveCamera makeDefault position={[4.35, 3.31, -3.61]} fov={60}/>
           <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
           <Suspense fallback={null}>
             <Chair/>
