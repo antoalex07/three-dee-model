@@ -61,21 +61,11 @@
 .homePage .menu {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     box-sizing: border-box;
     padding: 10px;
     gap: 10px;
     height: calc(100vh - 40%);
-}
-
-.menu .row {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
 }
 
 .menu .config {

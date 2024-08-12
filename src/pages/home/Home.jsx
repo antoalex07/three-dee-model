@@ -5,14 +5,14 @@ import VideoPlayer from '../../components/VideoPlayer'
 import Image360Viewer from '../../components/Image360Viewer'
 import { Canvas } from '@react-three/fiber'
 import RotatingModel from '../../components/RotatingModel'
-import { Environment, OrbitControls } from '@react-three/drei'
-import Chair from '../../components/model/Chair'
-import Sofa from '../../components/model/Sofa'
-import { useNavigate } from 'react-router-dom'
+import { ContactShadows, Environment, PerspectiveCamera } from '@react-three/drei'
+import Shoe from '../../components/model/Shoe'
+// import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  
 
   return (
     <div className='homePage'>
@@ -34,75 +34,55 @@ const Home = () => {
       </div>
 
       <div className='menu'>
-        <div className='row'>
           
-          <div className='config' onClick={() => navigate("/video-config")}>
+          <div className='config'> 
+          {/* onClick={() => navigate("/video-config")}> */}
             <div className='model__container'>
               <VideoPlayer/>
             </div>
             <div className='heading'>Seamless Video Loop of 3D Object</div>
           </div>
 
-          <div className='config' onClick={() => navigate("/image-config")}>
+          <div className='config'> 
+          {/* onClick={() => navigate("/rotate-config")}> */}
+            <div className='model__container'>
+              <Canvas>
+                <PerspectiveCamera makeDefault position={[2.606, 2.013, -1.729]} rotation={[-2.710, 0.920, 2.790]} fov={60} />
+                <ambientLight intensity={1}/>
+                <Suspense fallback={null}>
+                  <RotatingModel/>
+                </Suspense>
+                <Environment files='royal.hdr' />
+                <ContactShadows rotateX={Math.PI / 3} position={[0, -0.3, 0]} opacity={0.3} width={4} height={4} blur={0.3} far={4}/>
+              </Canvas>
+            </div>
+            <div className='heading'>Rotating 3D Model</div>
+          </div>
+
+          <div className='config'>
+           {/* onClick={() => navigate("/image-config")}> */}
             <div className='model__container'>
               <Image360Viewer/>
             </div>
             <div className='heading'>Image Sequencing With Hover Effect</div>
           </div>
 
-          <div className='config' onClick={() => navigate("/rotate-config")}>
+          <div className='config' >
+           {/* onClick={() => navigate("/color-config")}> */}
             <div className='model__container'>
-              <Canvas camera={{focus: 85}}>
-                <ambientLight intensity={1}/>
+              <Canvas>
+                <PerspectiveCamera makeDefault position={[0.690, 0.538, 2.648]} rotation={[-0.2, 0.25, 0.0502]} />
+                <ambientLight intensity={0.5}/>
+                <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
                 <Suspense fallback={null}>
-                  <RotatingModel/>
+                  <Shoe/>
+                  <Environment files="royal.hdr" />
+                  <ContactShadows rotateX={Math.PI / 3} position={[0, -0.9, 0]} opacity={0.1} width={4} height={4} blur={0.3} far={4}/>
                 </Suspense>
-                <Environment preset='apartment' />
-              </Canvas>
-            </div>
-            <div className='heading'>Rotating 3D Model</div>
-          </div>
-        </div>
-        <div className='row'>
-
-          <div className='config' onClick={() => navigate("/analyze-config")}>
-            <div className="model__container">
-              <Canvas camera={{position:[3, 3, 3], focus: 85, fov: 80 }}>
-                <ambientLight intensity={1}/>
-                <OrbitControls 
-                    enableZoom={false}
-                    minPolarAngle={Math.PI / 3}
-                    maxPolarAngle={Math.PI / 3}
-                    minAzimuthAngle={-Infinity}
-                    maxAzimuthAngle={Infinity}
-                />
-                <Suspense fallback={null}>
-                  <Chair/>
-                </Suspense>
-                <Environment preset='sunset' />
-              </Canvas>
-            </div>
-            <div className='heading'>Product 360 Analyzer</div>
-          </div>
-
-          <div className='config' onClick={() => navigate("/color-config")}>
-            <div className='model__container'>
-              <Canvas camera={{focus: 85}}>
-                <ambientLight intensity={1}/>
-                <OrbitControls 
-                  enablePan={false}
-                  enableZoom={false}
-                  minPolarAngle={Math.PI / 3}
-                  maxPolarAngle={Math.PI / 3}/>
-                <Suspense fallback={null}>
-                  <Sofa/>
-                </Suspense>
-                <Environment preset='sunset' />
               </Canvas>
             </div>
             <div className='heading'>Product Configurator</div>
           </div>
-        </div>
       </div>
     </div>
   )
