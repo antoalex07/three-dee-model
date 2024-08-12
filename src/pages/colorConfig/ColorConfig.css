@@ -1,0 +1,35 @@
+.colorConfig {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+}
+
+.colorConfig .heading {
+    position: fixed;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    position: relative;
+}
+
+.colorConfig .model__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 60%;
+    height: 60vh;
+}
+
+.colorConfig canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; 
+}
