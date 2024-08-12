@@ -1,6 +1,6 @@
 import { useFrame } from '@react-three/fiber';
 import React, { useRef } from 'react'
-import Bottle from '../components/model/Bottle'
+import Bottle from './model/Bottle'
 
 const RotatingModel = () => {
     
