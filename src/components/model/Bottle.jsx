@@ -10,12 +10,12 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('./model/Bottle.glb')
 
   // Modify the color of the materials directly
-  materials['Wenbo glass shader'].color.set('#a07433') // Change the color for the first and second mesh to blue
+  materials['Wenbo glass shader'].color.set('#7F5925') // Change the color for the first and second mesh to blue
   materials['Wenbo glass shader'].transparent = true 
-  materials['Wenbo glass shader'].opacity = 0.9 
+  materials['Wenbo glass shader'].opacity = 0.2 
 
   // Adjust properties for the water material
-  materials.liquid.color.set('#00bfff') // Light blue color for water
+  materials.liquid.color.set('#def4fc') // Light blue color for water
   materials.liquid.transparent = true  // Enable transparency
   materials.liquid.opacity = 0.7       // Slight transparency for water
   materials.liquid.reflectivity = 1    // Make it reflective
@@ -26,11 +26,36 @@ export default function Model(props) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Bottom.geometry} material={materials['Wenbo glass shader']} position={[0, 0.007, 0]} rotation={[0, 0.04, 0]} scale={[0.768, 0.773, 0.768]} />
-      <mesh geometry={nodes.Plane.geometry} material={materials['Wenbo glass shader']} position={[0, 1.195, 0]} rotation={[Math.PI / 2, 0, -1.357]} scale={0.791} />
-      <mesh geometry={nodes.Circle.geometry} material={materials.Cap} position={[0, 2.22, 0]} rotation={[0, 0.04, 0]} scale={0.26} />
-      <mesh geometry={nodes.Liquid.geometry} material={materials.liquid} position={[0, 1.195, 0]} rotation={[Math.PI / 2, 0, -0.04]} scale={0.791} />
-      <mesh geometry={nodes['Swish_Oil_Label_(FINAL)-upscaled'].geometry} material={materials['Swish_Oil_Label_(FINAL)-upscaled']} position={[0, 0.904, 0]} rotation={[0, 0.04, 0]} scale={0.791} />
+      <mesh 
+          geometry={nodes.Bottom.geometry} 
+          material={materials['Wenbo glass shader']} 
+          position={[0, 0.007, 0]} 
+          rotation={[0, 0.04, 0]} 
+          scale={[0.768, 0.773, 0.768]} />
+      <mesh 
+          geometry={nodes.Plane.geometry} 
+          material={materials['Wenbo glass shader']} 
+          position={[0, 1.195, 0]} 
+          rotation={[Math.PI / 2, 0, -1.357]} 
+          scale={0.791} />
+      <mesh 
+          geometry={nodes.Circle.geometry} 
+          material={materials.Cap} 
+          position={[0, 2.22, 0]} 
+          rotation={[0, 0.04, 0]} 
+          scale={0.26} />
+      <mesh 
+          geometry={nodes.Liquid.geometry} 
+          material={materials.liquid} 
+          position={[0, 1.195, 0]} 
+          rotation={[Math.PI / 2, 0, -0.04]} 
+          scale={0.791} />
+      <mesh 
+          geometry={nodes['Swish_Oil_Label_(FINAL)-upscaled'].geometry} 
+          material={materials['Swish_Oil_Label_(FINAL)-upscaled']} 
+          position={[0, 0.904, 0]} 
+          rotation={[0, 0.04, 0]} 
+          scale={0.791} />
     </group>
   )
 }
