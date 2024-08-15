@@ -1,6 +1,6 @@
 .videoConfig {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 0px;
     font-family: Arial, sans-serif;
@@ -8,129 +8,118 @@
     margin: auto;
 }
 
-  .mediaSection {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .productTitle {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .mediaContainer {
-    width: 30%;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .mediaImage {
-    width: 100%;
-    height: auto;
-  }
-  
-  .viewingOptions {
-    display: flex;
-    width: 100%;
-    margin-top: 40px;
-  }
-  
-  .viewOptionsGrid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .viewOption {
-    border: 1px solid #ccc;
-    padding: 5px;
-    cursor: pointer;
-  }
-  
-  .viewOption.selected {
-    border: 2px solid #007bff;
-  }
-  
-  .optionThumbnail {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .productInfo {
-    width: 100%;
-    margin-top: 40px;
-    text-align: center;
-  }
-  
-  .productInfo h3 {
-    margin-top: 10px;
-    color: #333;
-  }
-  
-  .addToCartButton {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-  }
-  
-  .addToCartButton:hover {
-    background-color: #0056b3;
-  }
-  
-  .customerReviews {
-    width: 100%;
-    margin-top: 40px;
-  }
-  
-  .customerReviews .review {
-    border-top: 1px solid #ccc;
-    padding: 20px 0;
-  }
-  
-  .customerReviews .review h3 {
-    margin-bottom: 5px;
-  }
-  
-  .customerReviews .review p {
-    margin: 5px 0;
-  }
-  
-
-
-
-/* .videoConfig {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: auto;
-    width: 100%;
-    height: 100vh;
+.videoConfig .media__Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 
-.videoConfig .heading {
-    position: fixed;
-    top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Lato", sans-serif;
-    position: relative;
+.videoConfig .mediaSection {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+  
+.videoConfig .productTitle {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+  
+.videoConfig .mediaContainer {
+  width: 50%;
+  max-width: 800px;
+  margin: auto;
+}
+  
+.videoConfig .mediaImage {
+  width: 100%;
+  height: auto;
+}
+  
+.videoConfig .viewingOptions {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+}
+  
+.videoConfig .viewOptionsGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
 }
 
-.videoConfig .model__container {
-    position: relative;
-    display: flex;
-    width: 40%;
-    height: 80vh;
-} */
+.videoConfig .viewOption {
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+  width: 14%;
+  height: 10vh;
+}
+
+.videoConfig .viewOption.selected {
+  border: 2px solid #007bff;
+}
+
+.videoConfig .optionThumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoConfig .detailsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+  font-family: "Nunito sans", sans-serif;
+}
+  
+.videoConfig .productInfo {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+  
+.videoConfig .productInfo h3 {
+  margin-top: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+.videoConfig .addToCartButton {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.videoConfig .addToCartButton:hover {
+  background-color: #0056b3;
+}
+
+.videoConfig .customerReviews {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.videoConfig .customerReviews .review {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.videoConfig .customerReviews .review h3 {
+  margin-bottom: 5px;
+}
+
+.videoConfig .customerReviews .review p {
+  margin: 5px 0;
+}

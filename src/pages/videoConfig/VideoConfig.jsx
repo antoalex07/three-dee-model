@@ -22,60 +22,73 @@ const VideoConfig = () => {
     const selected = options.find((option) => option.id === selectedOption);
 
     if (selected.id === 'video') {
-      return <VideoPlayer/>;
+      return <VideoPlayer className={selected.id !== 'video' ? 'hidden' : '' }/>;
     } else {
-      return <img src={selected.src} alt={selected.label} className="mediaImage" />;
+      return <img 
+          src={selected.src} 
+          alt={selected.label} 
+          className={`mediaImage ${selected.id === 'video' ? 'hidden' : ''}`}/>;
     }
   };
 
 
   return (
     <div className="videoConfig">
-      {/* Product Video or Image Section */}
-      <div className="mediaSection">
-        <div className="mediaContainer">{renderSelectedMedia()}</div>
-      </div>
+      <div className='media__Container'>
+        <div className="mediaSection">
+          <div className="mediaContainer">{renderSelectedMedia()}</div>
+        </div>
 
-      {/* Viewing Options */}
-      <div className="viewingOptions">
-        <div className="viewOptionsGrid">
-          {options.map((option) => (
-            <div
-              key={option.id}
-              className={`viewOption ${selectedOption === option.id ? 'selected' : ''}`}
-              onClick={() => handleOptionClick(option.id)}
-            >
-              {option.type === 'video' ? (
-                <video src={option.src} className="optionThumbnail" />
-              ) : (
-                <img src={option.src} alt={option.label} className="optionThumbnail" />
-              )}
-            </div>
-          ))}
+        <div className="viewingOptions">
+          <div className="viewOptionsGrid">
+            {options.map((option) => (
+              <div
+                key={option.id}
+                className={`viewOption ${selectedOption === option.id ? 'selected' : ''}`}
+                onClick={() => handleOptionClick(option.id)}
+              >
+                {option.type === 'video' ? (
+                  <video src={option.src} className="optionThumbnail" />
+                ) : (
+                  <img src={option.src} alt={option.label} className="optionThumbnail" />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      
-      {/* Product Information */}
-      <div className="productInfo">
-        <h2>Product Details</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet, turpis nec laoreet consequat, mauris erat consequat magna, nec interdum arcu ligula nec dolor.</p>
-        <h3>Price: $499.99</h3>
-        <button className="addToCartButton">Add to Cart</button>
-      </div>
-
-      {/* Customer Reviews */}
-      <div className="customerReviews">
-        <h2>Customer Reviews</h2>
-        <div className="review">
-          <h3>John Doe</h3>
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>Absolutely love this model! The details are incredible and it looks amazing in my VR setup.</p>
+      <div className='detailsContainer'>
+        <div className="productInfo">
+          <h2>Product Details</h2>
+          <p>Lorem ipsum dolor sit amet,
+             consectetur adipiscing elit, 
+             sed do eiusmod tempor incididunt 
+             ut labore et dolore magna aliqua. 
+             Ut enim ad minim veniam, quis nostrud 
+             exercitation ullamco laboris nisi ut 
+             aliquip ex ea commodo consequat. 
+             Duis aute irure dolor in reprehenderit 
+             in voluptate velit esse cillum dolore 
+             eu fugiat nulla pariatur. Excepteur sint 
+             occaecat cupidatat non proident, sunt in 
+             culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3>Price: $499.99</h3>
+          <button className="addToCartButton">Add to Cart</button>
         </div>
-        <div className="review">
-          <h3>Jane Smith</h3>
-          <p>⭐⭐⭐⭐</p>
-          <p>Great model, but the price is a bit high. Overall, I'm satisfied with my purchase.</p>
+
+        <div className="customerReviews">
+          <h2>Customer Reviews</h2>
+          <div className="review">
+            <h3>John Doe</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>Absolutely love this model! The details are incredible and it looks amazing in my VR setup.</p>
+          </div>
+          <div className="review">
+            <h3>Jane Smith</h3>
+            <p>⭐⭐⭐⭐</p>
+            <p>Great model, but the price is a bit high. Overall, I'm satisfied with my purchase.</p>
+          </div>
         </div>
       </div>
     </div>
