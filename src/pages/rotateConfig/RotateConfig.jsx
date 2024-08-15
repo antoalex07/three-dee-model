@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import React, { Suspense } from 'react'
-import Sofa from '../../components/model/Sofa123'
+import Sofa from '../../components/model/Sofa1'
 import { OrbitControls } from '@react-three/drei'
 
 const RotateConfig = () => {
