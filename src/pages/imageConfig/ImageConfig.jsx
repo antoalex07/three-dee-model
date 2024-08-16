@@ -1,15 +1,45 @@
 import React from 'react'
-import Image360Viewer from '../../components/Image360Viewer'
 import './ImageConfig.css'
+import ModelViewer from '../../components/ModelViewer'
 
 const ImageConfig = () => {
   return (
     <div className='imageConfig'>
-      <div className='heading'>
-        <h1>Image Sequencing With Hover Effect</h1>
-      </div>
       <div className='model__container'>
-        <Image360Viewer/>
+        <ModelViewer/>
+      </div>
+      <div className='detailsContainer'>
+        <div className="productInfo">
+          <h2>Product Details</h2>
+          <p>Lorem ipsum dolor sit amet,
+             consectetur adipiscing elit, 
+             sed do eiusmod tempor incididunt 
+             ut labore et dolore magna aliqua. 
+             Ut enim ad minim veniam, quis nostrud 
+             exercitation ullamco laboris nisi ut 
+             aliquip ex ea commodo consequat. 
+             Duis aute irure dolor in reprehenderit 
+             in voluptate velit esse cillum dolore 
+             eu fugiat nulla pariatur. Excepteur sint 
+             occaecat cupidatat non proident, sunt in 
+             culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3>Price: $499.99</h3>
+          <button className="addToCartButton">Add to Cart</button>
+        </div>
+
+        <div className="customerReviews">
+          <h2>Customer Reviews</h2>
+          <div className="review">
+            <h3>John Doe</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>Absolutely love this model! The details are incredible and it looks amazing in my VR setup.</p>
+          </div>
+          <div className="review">
+            <h3>Jane Smith</h3>
+            <p>⭐⭐⭐⭐</p>
+            <p>Great model, but the price is a bit high. Overall, I'm satisfied with my purchase.</p>
+          </div>
+        </div>
       </div>
     </div>
   )
