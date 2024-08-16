@@ -10,7 +10,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('./model/chair3.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Retopo_Cube003.geometry} material={materials.leather} position={[0, 0.5, 0]} rotation={[0, 1.571, 0]} scale={1.294} />
+      <mesh geometry={nodes.Retopo_Cube003.geometry} material={materials.leather} position={[0, 0.65, 0]} rotation={[0, 1.571, 0]} scale={1.294} />
     </group>
   )
 }
