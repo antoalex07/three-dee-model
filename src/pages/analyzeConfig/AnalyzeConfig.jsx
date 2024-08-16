@@ -1,9 +1,8 @@
-import { ContactShadows, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { AccumulativeShadows, Backdrop, Center, ContactShadows, Environment, OrbitControls, PerspectiveCamera, RandomizedLight } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React, { Suspense } from 'react'
-import Chair from '../../components/model/Chair3'
+import Bottle from '../../components/model/Bottle'
 import './AnalyzeConfig.css'
-import { DepthOfField, EffectComposer } from '@react-three/postprocessing'
 
 const AnalyzeConfig = () => {
 
@@ -17,11 +16,13 @@ const AnalyzeConfig = () => {
           <PerspectiveCamera makeDefault position={[4.35, 3.31, -3.61]} fov={60}/>
           <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
           <Suspense fallback={null}>
-            <Chair/>
+            <Bottle/>
             <Environment files="chairBackground.hdr"/>
-            <ContactShadows rotateX={Math.PI / 3} position={[0, -0.6, 0]} opacity={0.3} width={4} height={4} blur={0.3} far={4}/>
+            <ContactShadows rotateX={Math.PI / 3} position={[0, 0, 0]} opacity={0.5} width={4} height={4} blur={0.1} far={4}/>
           </Suspense>
-          <OrbitControls minDistance={3.5} maxDistance={5} />
+
+          
+          <OrbitControls/>
         </Canvas>
       </div>
     </div>
@@ -29,3 +30,5 @@ const AnalyzeConfig = () => {
 }
 
 export default AnalyzeConfig
+
+
