@@ -42,8 +42,7 @@ const Home = () => {
             <div className='heading'>Seamless Video Loop of 3D Object</div>
           </div>
 
-          <div className='config'> 
-          {/* onClick={() => navigate("/rotate-config")}> */}
+          <div className='config' onClick={() => navigate("/rotate-config")}>
             <div className='model__container'>
               <Canvas>
                 <PerspectiveCamera makeDefault position={[2.606, 2.013, -1.729]} rotation={[-2.710, 0.920, 2.790]} fov={50} />
@@ -58,8 +57,7 @@ const Home = () => {
             <div className='heading'>Rotating 3D Model</div>
           </div>
 
-          <div className='config'>
-           {/* onClick={() => navigate("/image-config")}> */}
+          <div className='config' onClick={() => navigate("/image-config")}>
             <div className='model__container'>
               <Image360Viewer/>
             </div>
