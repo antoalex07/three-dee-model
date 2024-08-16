@@ -1,0 +1,7 @@
+.img-container {
+    user-select: none;
+}
+
+img {
+    -webkit-user-drag: none;
+}
