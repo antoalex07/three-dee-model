@@ -14,7 +14,7 @@ const RotatingModel = () => {
 
   return (
     <mesh ref={modelRef}>
-        <Bottle/>
+        <Bottle />
     </mesh>
   );
 }
