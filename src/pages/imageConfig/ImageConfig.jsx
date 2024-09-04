@@ -1,12 +1,13 @@
 import React from 'react'
 import './ImageConfig.css'
-import ModelViewer from '../../components/ModelViewer'
+import Image2Video from '../../components/Image2Video'
 
 const ImageConfig = () => {
   return (
     <div className='imageConfig'>
       <div className='model__container'>
-        <ModelViewer/>
+        <Image2Video/>
+
       </div>
       <div className='detailsContainer'>
         <div className="productInfo">

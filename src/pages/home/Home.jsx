@@ -1,17 +1,33 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useRef } from 'react'
 import './Home.css'
 import { Button } from '@mui/material'
 import VideoPlayer from '../../components/VideoPlayer'
 import Image360Viewer from '../../components/Image360Viewer'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import RotatingModel from '../../components/RotatingModel'
-import { ContactShadows, Environment, PerspectiveCamera } from '@react-three/drei'
+import { ContactShadows, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import Shoe from '../../components/model/Shoe'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
   const navigate = useNavigate();
+
+  const CustomCamera = () => {
+    
+    const cameraRef = useRef();
+
+    useFrame(() => {
+        if(cameraRef.current) {
+        console.log('Camera position:', cameraRef.current);
+        // /* console.log('Camera rotation:', cameraRef.current.rotation); */
+        }
+    });
+
+    return (
+      <PerspectiveCamera ref={cameraRef} makeDefault position={[-1.978, 19.965, 108.455]} rotation={[-0.1237, -0.997, -0.103]} fov={10}/>
+    )
+  }
   
 
   return (
@@ -42,16 +58,19 @@ const Home = () => {
             <div className='heading'>Seamless Video Loop of 3D Object</div>
           </div>
 
-          <div className='config' onClick={() => navigate("/rotate-config")}>
+          <div className='config'> 
+            {/* onClick={() => navigate("/rotate-config")}> */}
             <div className='model__container'>
               <Canvas>
-                <PerspectiveCamera makeDefault position={[2.606, 2.013, -1.729]} rotation={[-2.710, 0.920, 2.790]} fov={50} />
+                {/* <PerspectiveCamera makeDefault position={[-10, 10, -8]} fov={10} /> */}
+                <CustomCamera/>
                 <ambientLight intensity={0.5}/>
                 <Suspense fallback={null}>
                   <RotatingModel/>
                 </Suspense>
-                <Environment files='royal.hdr' />
+                <Environment files='bathroom.hdr' />
                 <ContactShadows rotateX={Math.PI / 2} position={[0, 0, 0]} opacity={0.5} width={5} height={4} blur={0.3} far={4}/>
+                <OrbitControls/>
               </Canvas>
             </div>
             <div className='heading'>Rotating 3D Model</div>
@@ -64,8 +83,8 @@ const Home = () => {
             <div className='heading'>Image Sequencing With Hover Effect</div>
           </div>
 
-          <div className='config' >
-           {/* onClick={() => navigate("/color-config")}> */}
+          <div className='config' 
+           onClick={() => navigate("/color-config")}>
             <div className='model__container'>
               <Canvas>
                 <PerspectiveCamera makeDefault position={[0.690, 0.538, 2.648]} rotation={[-0.2, 0.25, 0.0502]} />

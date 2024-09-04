@@ -3,7 +3,8 @@ import './RotateConfig.css'
 import { Canvas, useFrame } from '@react-three/fiber';
 import { ContactShadows, Environment, MeshReflectorMaterial, OrbitControls, PerspectiveCamera, PresentationControls, Stage } from '@react-three/drei';
 import Bottle from '../../components/model/Bottle'
-import Chair from '../../components/model/Chair'
+import Chair from '../../components/model/Chair2'
+import RotatingModel from '../../components/RotatingModel'
 
 const RotateConfig = () => {
 
@@ -19,7 +20,7 @@ const RotateConfig = () => {
     });
 
     return (
-      <PerspectiveCamera ref={cameraRef} makeDefault position={[4.35, 3.31, -3.61]} fov={60} />
+      <PerspectiveCamera ref={cameraRef} makeDefault position={[3.097, 2.933, -5.617]} rotation={[-2.66, 0.454, 2.916]} fov={10}/>
     )
   }
 
@@ -37,30 +38,32 @@ const RotateConfig = () => {
   const renderSelectedMedia = () => {
     if(selectedOption === 'bottle') {
       return (
-          <Canvas>
-            <PerspectiveCamera makeDefault position={[0.333, 2.332, 3.925]} rotation={[-0.415, 0.058, 3.925]} fov={65} />
-            <ambientLight intensity={0.5}/>
-            <Suspense fallback={null}>
-              <Bottle/>
-            </Suspense>
-            <Environment files='royal.hdr' />
-            <ContactShadows rotateX={Math.PI / 2} position={[0, 0, 0]} opacity={0.5} width={5} height={4} blur={0.3} far={4}/>
-            <OrbitControls enablePan={false} minPolarAngle={Math.PI / 3} maxPolarAngle={Math.PI / 3} enableZoom={false}/>
-          </Canvas>
+        <Canvas>
+          <PerspectiveCamera makeDefault position={[22.432, 10.627, -13.332]} rotation={[2.946, 1.04, -2.973]} fov={10} />
+          {/* <CustomCamera/> */}
+          <ambientLight intensity={0.5}/>
+          <Suspense fallback={null}>
+            <RotatingModel/>
+          </Suspense>
+          <Environment files='bathroom.hdr' />
+          <ContactShadows rotateX={Math.PI / 2} position={[0, 0, 0]} opacity={0.5} width={5} height={4} blur={0.3} far={4}/>
+          <OrbitControls/>
+        </Canvas>
       )
     }
     else {
       return (
         <Canvas>
-          <PerspectiveCamera makeDefault position={[0.513, 0.808, -0.931]} rotation={[-2.426, 0.394, 2.819]} fov={65} />
+          <PerspectiveCamera makeDefault position={[3.097, 2.933, -5.617]} rotation={[-2.66, 0.454, 2.916]} fov={10} />
             {/* <CustomCamera/> */}
-            <ambientLight intensity={0.5}/>
+            <ambientLight intensity={0.7}/>
             <Suspense fallback={null}>
               <Chair/>
             </Suspense>
             <Environment files='royal.hdr' />
-            <ContactShadows rotateX={Math.PI / 2} position={[0, 0, 0]} opacity={0.5} width={2} height={2.5} blur={0.1} far={4}/>
-            <OrbitControls enablePan={false} minPolarAngle={Math.PI / 3.5} maxPolarAngle={Math.PI / 3.5} enableZoom={false}/>
+            {/* <OrbitControls/> */}
+            <ContactShadows rotateX={Math.PI / 2} position={[0, 0, 0]} opacity={0.3} width={2} height={2.5} blur={0.01} far={4}/>
+            <OrbitControls/>
           </Canvas>
       )
     }
@@ -122,3 +125,17 @@ const RotateConfig = () => {
 }
 
 export default RotateConfig
+
+
+          // <Canvas>
+          //   <PerspectiveCamera makeDefault scale={10} />
+          //   <CustomCamera/>
+          //   <ambientLight intensity={0.5}/>
+          //   <Suspense fallback={null}>
+          //     <Bottle/>
+          //   </Suspense>
+          //   <Environment background={true} files='bathroom.hdr' />
+          //   <ContactShadows rotateX={Math.PI / 2} position={[0, 0, 0]} opacity={0.5} width={5} height={4} blur={0.3} far={4}/>
+          //   <OrbitControls/>
+          //   <OrbitControls enablePan={false} minPolarAngle={Math.PI / 3} maxPolarAngle={Math.PI / 3} enableZoom={true}/>
+          // </Canvas>
