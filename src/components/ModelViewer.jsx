@@ -42,7 +42,7 @@ const ModelViewer = ({ totalImages = 250 }) => {
           }
           return nextIndex;
         });
-      }, 1000 / 12000); // Approximately 16.67ms for 60fps
+      }, 10); 
     };
 
     const imgElement = imageRef.current;
