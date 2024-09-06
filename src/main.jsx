@@ -7,11 +7,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Suspense fallback={<div>loading.....</div>}>
+      {/* <Suspense fallback={<div>loading.....</div>}> */}
         <Routes>
           <Route path='/*' element={<App/>} />
         </Routes>
-      </Suspense>
+      {/* </Suspense> */}
     </BrowserRouter>
   </React.StrictMode>
 )
