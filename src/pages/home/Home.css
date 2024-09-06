@@ -104,6 +104,7 @@
 .menu .config .heading {
     text-align: center;
     padding: 10px;
+    cursor: pointer;
 }
 
 .menu .model__container .img-container {
